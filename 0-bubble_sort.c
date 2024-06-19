@@ -15,14 +15,14 @@ void bubble_sort(int *array, size_t size)
 	int swap;
 	size_t count = size;
 
-	if (!array || size == 0)
+	if (!array || size < 2)
 	{
 		return;
 	}
 	for(i = 0; i < size - 1; i++)
 	{
 		swap = 0;
-		for(j = 0; j < count - 1; j++)
+		for(j = 0; j < count - 1 - i; j++)
 		{
 			if (array[j] > array[j + 1])
 			{
@@ -37,6 +37,5 @@ void bubble_sort(int *array, size_t size)
 		{
 			break;
 		}
-		count--;
 	}
 }
