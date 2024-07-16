@@ -33,7 +33,7 @@ void insertion_sort_list(listint_t **list)
 			{
 				first_node->prev->next = second_node;
 			}
-			second_node->prev = first->prev;
+			second_node->prev = first_node->prev;
 			first_node->next = second_node->next;
 			if (!second_node->next)
 			{
