@@ -8,7 +8,7 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *temp = *(list);
+	listint_t *temp;
 	listint_t *first_node = NULL;
 	listint_t *second_node = NULL;
 
@@ -16,6 +16,7 @@ void insertion_sort_list(listint_t **list)
 	{
 		return;
 	}
+	temp = *(list);
 	if (!temp->next)
 	{
 		return;
