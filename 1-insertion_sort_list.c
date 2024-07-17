@@ -13,9 +13,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *second_node = NULL;
 
 	if (list == NULL || *list == NULL)
-	{
 		return;
-	}
 	if (!temp->next)
 	{
 		print_list(*(list));
@@ -26,8 +24,7 @@ void insertion_sort_list(listint_t **list)
 	{
 		first_node = temp->prev;
 		second_node = temp;
-		while (first_node != NULL && second_node != NULL
-				&& first_node->n > second_node->n)
+		while (first_node && second_node && first_node->n > second_node->n)
 		{
 			if (first_node->prev != NULL)
 			{
@@ -35,7 +32,7 @@ void insertion_sort_list(listint_t **list)
 			}
 			second_node->prev = first_node->prev;
 			first_node->next = second_node->next;
-			if (!second_node->next)
+			if (second_node->next != NULL)
 			{
 				first_node->next->prev = first_node;
 			}
@@ -46,7 +43,7 @@ void insertion_sort_list(listint_t **list)
 				*list = second_node;
 			}
 			first_node = second_node->prev;
-			print_list(*list);
+			print_list(*(list));
 		}
 		temp = temp->next;
 	}
