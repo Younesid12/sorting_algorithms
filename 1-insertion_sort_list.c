@@ -13,7 +13,9 @@ void insertion_sort_list(listint_t **list)
 	listint_t *second_node = NULL;
 
 	if (list == NULL || *list == NULL)
+	{
 		return;
+	}
 	if (!temp->next)
 	{
 		return;
